@@ -31,8 +31,11 @@ ENV PATH="${PATH}:/root/uclid/target/universal/uclid-0.9.5/bin/"
 # Configure JVM
 ENV _JAVA_OPTIONS="-Xmx12G -Xss4m"
 
+RUN apt install -y python3.11
+RUN echo "alias python='python3.11'">>~/.bashrc
 WORKDIR /cps
 COPY src/ /cps/src/ 
-
+COPY Makefile /cps/
+COPY scripts/ /cps/scripts
 # Run bash upon entry.
 ENTRYPOINT ["/bin/bash"]
