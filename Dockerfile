@@ -19,7 +19,7 @@ RUN git clone --progress https://github.com/uclid-org/uclid.git && \
     git checkout 4fd5e566c5f87b052f92e9b23723a85e1c4d8c1c && \
     ./get-z3-linux.sh
 ENV PATH="${PATH}:/root/uclid/z3/bin"
-ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/root/uclid/z3/bin"
+ENV LD_LIBRARY_PATH="/root/uclid/z3/bin"
 RUN z3 --version
 RUN cd uclid && \
     sbt update clean compile && \
