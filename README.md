@@ -7,7 +7,8 @@ docker build . -t cps-lf
 docker run -it cps-lf
 ```
 
-Inside `docker` container run below commands.
+Inside `docker` container run the following commands.
+
 
 ```bash
 # This will run benchmark tests
